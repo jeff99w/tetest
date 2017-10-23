@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom inheritance hierarchy</title>
+</head>
+<body>
+	<script type="text/javascript">
+	console.log(Object.getOwnPropertyNames(document.createElement("p").__proto__));
+	console.log(Object.getOwnPropertyNames(document.createElement("p").__proto__.__proto__));
+	</script>
+</body>
+</html>

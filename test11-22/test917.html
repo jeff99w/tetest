@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>classical clourse</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*document.body.innerHTML = "<div id=div1>aaa</div>" + "<div id=div2>bbb</div>" + "<div id=div3>ccc</div>"
+		for (var i = 1; i<4; i++){
+			document.getElementById("div" + i).addEventListener('click',function(){
+				alert(i);
+			})
+		}*/
+
+		document.body.innerHTML = "<div id = diva1>AAA</div>" + "<div id = diva2>BBB</div>"+ "<div id=diva3>CCC</div>"
+		for (var j = 1; j<4; j ++){
+			!function (j) {
+				document.getElementById('diva'+ j).addEventListener('click',function () {
+					alert(j);
+				});
+				// body...
+			}(j);
+		}
+
+	</script>
+</body>
+</html>

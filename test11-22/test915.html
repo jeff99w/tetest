@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test91510</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*var person = {
+		name:"wj",
+		gender:"male",
+		get age(){
+			return new Date().getFullYear() - 1993
+		},
+		set age(val){
+			console.log("age can be set " + val)
+		}
+	}
+	console.log(person.age);
+	person.age = 88;
+    console.log(person.age)
+
+    Object.defineProperties(person,
+    	{name:{value:"wj",enumerable:true},
+        corp:{value:"BABA", enumerable:true},
+        salary:{value:500000,enumerable:true,writable:true},
+        luck:{
+        get: function(){
+        	return Math.random() > 0.5?"good":"bad";
+        }   
+        },
+        promote:{
+        	set:function(level){
+        		this.salary*=1+level*0.1;
+        	}
+        }
+       
+
+
+        });
+    var de = Object.getOwnPropertyDescriptor(person,"salary");
+    var de1 = Object.getOwnPropertyDescriptor(person,"corp");
+    console.log(de);
+    console.log(de1);
+    console.log(person.salary);
+    person.promote=2;
+    console.log(person.salary)*/
+
+    /*var o = {
+    	name:"ali"
+    }
+    
+    function f(){
+    	return this.name
+    }
+
+    o.a = f;
+    console.log(o.a());
+    console.log(o.name)*/
+    
+    this.x = 9;
+    var module = {
+    	x:81,
+    	getX:function () {
+    		return this.x;
+    	
+    	}};
+    console.log(module.getX());
+    var getX = module.getX;
+    console.log(getX());//因为getX 是全局的变量，this指向window
+
+    var boundGetX = getX.bind(module);
+    console.log(boundGetX());
+
+    
+
+</script>
+	
+</body>
+</html>

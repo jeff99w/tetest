@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nodeType实验</title>
+</head>
+<body>
+	<!-- nodeType实验 -->
+	<div id="con">这是一个元素节点</div>
+   <script type="text/javascript">
+   	var divNode = document.getElementById('con');
+   	console.log(divNode.nodeName + "/" + divNode.nodeValue);
+
+   	var attrNode = divNode.attributes[0];
+   	console.log(attrNode.nodeName + "/" + attrNode.nodeValue);
+
+   	var textNode = divNode.childNodes[0];
+   	console.log(textNode.nodeName + "/" + textNode.nodeValue);
+    // body 的第一个子元素是注释标签前面的空白
+   	var commentNode = document.body.childNodes[1];
+   	console.log(commentNode.nodeName + "/" + commentNode.nodeValue);
+
+   	console.log(document.doctype.nodeName + "/" +document.doctype.nodeValue );
+
+   	var frag = document.createDocumentFragment();
+   	console.log(frag.nodeName + "/" + frag.nodeValue);
+   </script>
+	
+</body>
+</html>

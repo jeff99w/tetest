@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test914</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*function add(c,d){
+			return this.a + this.b + c +d ;
+		}
+	var o={a:2, b:4};
+	alert( add.call(o,6,8));
+	*/
+	/*function foo(){}
+	foo.prototype.z = 3;
+
+	var obj = new foo();
+	obj.y = 2;
+	obj.x = 1;
+
+	console.log(obj.x);
+	console.log(obj.y);
+	console.log(obj.z);
+	console.log(typeof obj.toString);
+	console.log("z" in obj);
+	console.log(obj.hasOwnProperty("z"));
+	console.log(obj.hasOwnProperty("x"));
+*/
+	var o = {x:1, y:2, z:3};
+	
+	"x" in o;
+	"toString" in o;
+	o.hasOwnProperty("toString");
+	var key;
+	for (key in o){
+		console.log(key);
+	}
+
+	var obj = Object.create(o);
+	obj.a = 4;
+	var key;
+	for (key in obj){
+		console.log(key);
+	}
+
+
+    var obj = Object.create(o);
+    obj.a = 4;
+    var key;
+    for (key in obj){
+    	if(obj.hasOwnProperty(key)){
+    		console.log(key);
+    	}
+    }
+   	</script>
+</body>
+</html>

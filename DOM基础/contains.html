@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>contains</title>
+</head>
+<body>
+	<div id="pnode">
+		<div id="cnode">子节点内容</div>
+	</div>
+	<script type="text/javascript">
+		var pnode = document.getElementById('pnode');
+		var cnode = document.getElementById('cnode');
+		var cnodeCh = document.getElementById('cnode').childNodes[0];
+		console.log(pnode.contains(cnode));
+		console.log(pnode.contains(cnodeCh));
+	</script>
+</body>
+</html>

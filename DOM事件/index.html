@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" name="btn" id="btn1" value="submit">
+		<a href="http://www.baidu.com" id="go">a测试</a>
+	</div>
+	
+	<script type="text/javascript">
+		//跨浏览器事件处理程序
+		var eventUtil={
+			//添加句柄
+			addHandler:function(element,type,handler){
+				if(element.addEventListener){
+					element.addEventListener(type,handler,false);
+
+				}else if(element.attchEvent){
+					element.attchEvent('on'+type,handler);
+
+				}else{
+					element['on'+type] = handler;
+
+				}
+
+
+			},
+			//删除handler
+			removeHandler:function(element,type,handler){
+				if(element.removeEventListener){
+					element.removeEventListener(type,handler,false);
+
+				}else if(element.detchEvent){
+					element.detchEvent('on'+type,handler);
+
+				}else{
+					element['on'+type] = null;
+
+				}
+
+
+			}
+		}
+
+		function showMes(){
+			alert(event.target.nodeName.);
+			event.stopPropagation();
+			
+		}
+		function showBox(){
+			alert('box');
+			event.preventDefault()
+		}
+		function stopGoto(){
+			alert("123")
+			event.preventDefault();
+		}
+
+       var btn = document.getElementById('btn1');
+       var box = document.getElementById("box");
+       var go = document.getElementById('go');
+       eventUtil.addHandler(btn,"click",showMes);
+       //eventUtil.removeHandler(btn,"click",showMes);
+       //ie8以上已经也支持addEventListen
+      // btn.addEventListener('click',showMes,false);
+      eventUtil.addHandler(box,"click",showBox);
+      eventUtil.addHandler(go,"click",stopGoto);
+     
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dom not ready</title>
+	<!-- DOM is not ready by writing here
+	<script type="text/javascript">
+		document.getElementById("header").style.color = "red";
+	</script> -->
+
+	<!-- 不能准确确定时间
+	<script type="text/javascript">
+	setTimeout(function(){document.getElementById("header").style.color = "red"},3000)	
+	</script>  -->
+	<!-- 记载太多资源时，并不能很准确
+	<script type="text/javascript">
+		window.onload = function(){
+			document.getElementById("header").style.color = "red";
+		}
+	</script> -->
+	<script type="text/javascript" src="scripts/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			document.getElementById("header").style.color = "red";
+		});
+	</script>
+</head>
+<body>
+  <h1 id="header">这是h1包含的内容</h1>
+</body>
+</html>
